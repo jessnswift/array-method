@@ -1,4 +1,4 @@
-const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
+const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune", "pluto"]
 
 /*
     Use the forEach method to add the name of each planet
@@ -30,7 +30,6 @@ const myPlanetsUpperCase = planets.map(planet => {
     const newPlanet = planet.slice(0, 1).toUpperCase() + planet.slice(1, planet.length)
     return newPlanet
 })
-    console.log(myPlanetsUpperCase)
 
 myPlanetsUpperCase.forEach(element => {
     const planetParagraph = document.createElement("p");
@@ -45,9 +44,21 @@ myPlanetsUpperCase.forEach(element => {
 
     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
 */
+const ePlanets = myPlanetsUpperCase.filter(planets => {
+    return(planets.includes('e' || 'E'))
+
+}); 
+console.log(ePlanets);
 
 
 // Use the reduce method to create a sentence from the words in the following array
 
 
-// const words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese"]
+const words = ["The", "early", "bird", "might", "get", "the", "worm", "but", "the", "second", "mouse", "gets", "the", "cheese!"]
+
+const newSentence = words.reduce(
+    function(sentence, next) {
+    return sentence + " " + next
+});
+
+console.log(newSentence);
